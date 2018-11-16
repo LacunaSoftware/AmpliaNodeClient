@@ -16,4 +16,4 @@ Or informing on your project's `package.json` file:
       }
     }
 
-For more information, see http://www.lacunasoftware.com/en/certificate/#/amplia
+For more information, see (Amplia)[http://www.lacunasoftware.com/en/certificate/#/amplia] page.
