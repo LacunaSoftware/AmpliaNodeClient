@@ -26,13 +26,16 @@ const {
 	HeaderNames,
 	QRCodeTypes,
 	OrderStatus,
-	PaginationOrders
+	PaginationOrders,
+	AmpliaErrorCodes,
+	HttpMethods
 } = require('./lib/enums');
 const { IssueCertificateRequest } = require('./lib/issue-certificate-request');
 const {
 	Order,
 	BaseOrder
 } = require('./lib/order');
+const { OrderLocketError } = require('./lib/order-locket-error');
 const { PaginatedSearchParams } = require('./lib/paginated-search-params');
 const { PaginatedSearchResponse } = require('./lib/paginated-search-response');
 const {
@@ -60,6 +63,7 @@ exports.CertificateParameters = CertificateParameters;
 exports.CieCertificateParameters = CieCertificateParameters;
 exports.CieInstitution = CieInstitution;
 exports.CnbCertificateParameters = CnbCertificateParameters;
+exports.SslCertificateParameters = SslCertificateParameters;
 exports.CertificateSummary = CertificateSummary;
 exports.CreateOrderRequest = CreateOrderRequest;
 exports.CertificateKinds = CertificateKinds;
@@ -69,8 +73,11 @@ exports.HeaderNames = HeaderNames;
 exports.QRCodeTypes = QRCodeTypes;
 exports.OrderStatus = OrderStatus;
 exports.PaginationOrders = PaginationOrders;
+exports.AmpliaErrorCodes = AmpliaErrorCodes;
+exports.HttpMethods = HttpMethods;
 exports.IssueCertificateRequest = IssueCertificateRequest;
 exports.Order = Order;
+exports.OrderLocketError = OrderLocketError;
 exports.BaseOrder = BaseOrder;
 exports.PaginatedSearchParams = PaginatedSearchParams;
 exports.PaginatedSearchResponse = PaginatedSearchResponse;
@@ -83,4 +90,3 @@ exports.Response = Response;
 exports.RestClient = RestClient;
 exports.RestError = RestError;
 exports.RestUnreachableError = RestUnreachableError;
-exports.SslCertificateParameters = SslCertificateParameters;
