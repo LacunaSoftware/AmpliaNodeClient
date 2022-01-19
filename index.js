@@ -16,6 +16,7 @@ const {
 	CnbCertificateParameters,
 	PkiBrazilCertificateParameters,
 	SslCertificateParameters,
+	CustomCertificateParameters,
 } = require('./lib/certificate-parameters');
 const { CertificateSummary } = require('./lib/certificate-summary');
 const { CreateOrderRequest } = require('./lib/create-order-request');
@@ -64,6 +65,7 @@ exports.CieCertificateParameters = CieCertificateParameters;
 exports.CieInstitution = CieInstitution;
 exports.CnbCertificateParameters = CnbCertificateParameters;
 exports.SslCertificateParameters = SslCertificateParameters;
+exports.CustomCertificateParameters = CustomCertificateParameters;
 exports.CertificateSummary = CertificateSummary;
 exports.CreateOrderRequest = CreateOrderRequest;
 exports.CertificateKinds = CertificateKinds;
