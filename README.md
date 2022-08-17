@@ -12,7 +12,7 @@ Or informing on your project's `package.json` file:
     {
       ...
       "dependencies": {
-        "amplia-client": "1.1.0"
+        "amplia-client": "1.1.1"
       }
     }
 
