@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"jest.coverageFormatter": "GutterFormatter",
+		"jest.debugCodeLens.showWhenTestStateIn": [
+			"pass",
+			"fail",
+			"unknown"
+		]
+	},
+	"extensions": {
+		"recommendations": [
+			"christian-kohler.npm-intellisense",
+			"dbaeumer.vscode-eslint",
+			"Orta.vscode-jest"
+		]
+	}
+}

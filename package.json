@@ -4,7 +4,7 @@
   "description": "Classes to consume Lacuna Software's Amplia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "homepage": "https://github.com/LacunaSoftware/AmpliaNodeClient#readme",
   "dependencies": {
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
   }
 }
