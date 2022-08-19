@@ -3,5 +3,6 @@
   "collectCoverage": true,
   "coverageDirectory": "coverage",
   "coverageProvider": "v8",
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|integration))\\.[jt]sx?$"
+  "rootDir": "lib",
+  "testRegex": "(/__tests__/.*|(\\.|/)test)\\.[jt]sx?$"
 }

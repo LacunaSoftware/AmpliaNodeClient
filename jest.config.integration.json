@@ -3,5 +3,5 @@
   "collectCoverage": true,
   "coverageDirectory": "coverage",
   "coverageProvider": "v8",
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|integration))\\.[jt]sx?$"
+  "testRegex": "(/__tests__/.*|(\\.|/)integration)\\.[jt]sx?$"
 }

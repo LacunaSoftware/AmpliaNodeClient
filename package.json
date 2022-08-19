@@ -4,7 +4,9 @@
   "description": "Classes to consume Lacuna Software's Amplia",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:unit": "jest -c jest.config.unit.json",
+    "test:integration": "jest -c jest.config.integration.json"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
     "jest": "^28.1.3"
   }
 }
