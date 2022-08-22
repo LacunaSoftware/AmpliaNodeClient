@@ -10,7 +10,7 @@ node_modules/
 npm-debug.log
 
 # Tests
-**.test.js
-**.integration.js
 test/
-jest.config.*.json
+jest.config.integration.json
+jest.config.unit.json
+jest.config.json

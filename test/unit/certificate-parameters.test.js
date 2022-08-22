@@ -1,7 +1,7 @@
 const { faker } = require('@faker-js/faker');
 
-const { PkiParaguayCertificateParameters } = require('./certificate-parameters');
-const { PkiParaguayCertificateTypes, PkiParaguayDocumentTypes } = require('./enums');
+const { PkiParaguayCertificateParameters } = require('../../lib/certificate-parameters');
+const { PkiParaguayCertificateTypes, PkiParaguayDocumentTypes } = require('../../lib/enums');
 
 const VALID_GIVEN_NAMES = "valid-given-names";
 const VALID_SURNAMES = "valid-surnames";
