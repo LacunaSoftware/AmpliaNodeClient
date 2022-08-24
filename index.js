@@ -15,6 +15,7 @@ const {
 	CieInstitution,
 	CnbCertificateParameters,
 	PkiBrazilCertificateParameters,
+	PkiParaguayCertificateParameters,
 	SslCertificateParameters,
 } = require('./lib/certificate-parameters');
 const { CertificateSummary } = require('./lib/certificate-summary');
@@ -82,6 +83,7 @@ exports.BaseOrder = BaseOrder;
 exports.PaginatedSearchParams = PaginatedSearchParams;
 exports.PaginatedSearchResponse = PaginatedSearchResponse;
 exports.PkiBrazilCertificateParameters = PkiBrazilCertificateParameters;
+exports.PkiParaguayCertificateParameters = PkiParaguayCertificateParameters;
 exports.CertificateQRCodeData = CertificateQRCodeData;
 exports.QRCodeData = QRCodeData;
 exports.QRCodeParser = QRCodeParser;

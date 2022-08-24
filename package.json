@@ -1,10 +1,12 @@
 {
   "name": "amplia-client",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Classes to consume Lacuna Software's Amplia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:unit": "jest -c jest.config.unit.json",
+    "test:integration": "jest -c jest.config.integration.json"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,9 @@
   "homepage": "https://github.com/LacunaSoftware/AmpliaNodeClient#readme",
   "dependencies": {
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
+    "jest": "^28.1.3"
   }
 }
