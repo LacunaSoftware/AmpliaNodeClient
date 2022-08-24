@@ -8,3 +8,9 @@
 node_modules/
 
 npm-debug.log
+
+# Tests
+test/
+jest.config.integration.json
+jest.config.unit.json
+jest.config.json
