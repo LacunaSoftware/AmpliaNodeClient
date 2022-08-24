@@ -123,28 +123,28 @@ describe("PkiParaguayCertificateParameters", () => {
         expect(() => parameters.toModel()).toThrow(errorMsg);
     });
 
-    test("should accept a nonempty organization unit", () => {
-        const organizationUnit = "non-empty-organization-unit";
+    test("should accept a nonempty organizational unit", () => {
+        const organizationalUnit = "non-empty-organization-unit";
         const parameters = new PkiParaguayCertificateParameters({
             givenNames: VALID_GIVEN_NAMES,
             surnames: VALID_SURNAMES,
             documentNumber: VALID_DOCUMENT_NUMBER,
             documentType: VALID_DOCUMENT_TYPE,
-            organizationUnit,
+            organizationalUnit,
         });
-        expect(parameters.organizationUnit).toBe(organizationUnit);
-        expect(parameters.toModel()["organizationUnit"]).toBe(organizationUnit);
+        expect(parameters.organizationalUnit).toBe(organizationalUnit);
+        expect(parameters.toModel()["organizationalUnit"]).toBe(organizationalUnit);
     });
 
-    test("should accept a nullable or empty organization unit", () => {
+    test("should accept a nullable or empty organizational unit", () => {
         const parametersWithNullableOrganizationUnit = new PkiParaguayCertificateParameters({
             givenNames: VALID_GIVEN_NAMES,
             surnames: VALID_SURNAMES,
             documentNumber: VALID_DOCUMENT_NUMBER,
             documentType: VALID_DOCUMENT_TYPE,
         });
-        expect(parametersWithNullableOrganizationUnit.organizationUnit).toBeNull();
-        expect(parametersWithNullableOrganizationUnit.toModel()["organizationUnit"]).toBeNull();
+        expect(parametersWithNullableOrganizationUnit.organizationalUnit).toBeNull();
+        expect(parametersWithNullableOrganizationUnit.toModel()["organizationalUnit"]).toBeNull();
 
         const emptyOrganizationUnit = "";
         const parametersWithEmptyOrganizationUnit = new PkiParaguayCertificateParameters({
@@ -152,10 +152,10 @@ describe("PkiParaguayCertificateParameters", () => {
             surnames: VALID_SURNAMES,
             documentNumber: VALID_DOCUMENT_NUMBER,
             documentType: VALID_DOCUMENT_TYPE,
-            organizationUnit: emptyOrganizationUnit,
+            organizationalUnit: emptyOrganizationUnit,
         });
-        expect(parametersWithEmptyOrganizationUnit.organizationUnit).toBeNull();
-        expect(parametersWithEmptyOrganizationUnit.toModel()["organizationUnit"]).toBeNull();
+        expect(parametersWithEmptyOrganizationUnit.organizationalUnit).toBeNull();
+        expect(parametersWithEmptyOrganizationUnit.toModel()["organizationalUnit"]).toBeNull();
     });
 
     test("should accept a valid ruc", () => {
