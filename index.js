@@ -63,6 +63,7 @@ const { RestUnreachableError } = require('./lib/rest-unreachable-error');
 const { RSAPublicParametersModel } = require('./lib/rsa-public-parameters');
 const { SignHashRequest } = require('./lib/sign-hash-request');
 const { SignHashResponse } = require('./lib/sign-hash-response');
+const { toModel } = require('./lib/model-transform');
 
 exports.AmpliaClient = AmpliaClient;
 exports.AmpliaError = AmpliaError;
@@ -116,3 +117,4 @@ exports.CreateProtectedKeyRequest = CreateProtectedKeyRequest;
 exports.CreateKeyRequest = CreateKeyRequest;
 exports.DigestAlgorithms = DigestAlgorithms;
 exports.KeyTypes = KeyTypes;
+exports.toModel = toModel;
