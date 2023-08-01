@@ -19,19 +19,26 @@ const {
 	SslCertificateParameters,
 } = require('./lib/certificate-parameters');
 const { CertificateSummary } = require('./lib/certificate-summary');
+const { CreateKeyRequest } = require('./lib/create-key-request');
 const { CreateOrderRequest } = require('./lib/create-order-request');
+const { CreateProtectedKeyRequest } = require('./lib/create-protected-key-request');
+const { CsrInfo } = require('./lib/csr-info');
 const {
 	CertificateKinds,
 	CertificateFormats,
 	ArispRoles,
+	DigestAlgorithms,
+	KeyTypes,
 	HeaderNames,
 	QRCodeTypes,
 	OrderStatus,
 	PaginationOrders,
 	AmpliaErrorCodes,
-	HttpMethods
+	HttpMethods,
 } = require('./lib/enums');
 const { IssueCertificateRequest } = require('./lib/issue-certificate-request');
+const { KeyModel } = require('./lib/key-model');
+const { NameModel } = require('./lib/name-model');
 const {
 	Order,
 	BaseOrder
@@ -39,6 +46,8 @@ const {
 const { OrderLocketError } = require('./lib/order-locket-error');
 const { PaginatedSearchParams } = require('./lib/paginated-search-params');
 const { PaginatedSearchResponse } = require('./lib/paginated-search-response');
+const { PinResult } = require('./lib/pin-result');
+const { PinStatus } = require('./lib/pin-status');
 const {
 	CertificateQRCodeData,
 	QRCodeData
@@ -51,6 +60,10 @@ const {
 } = require('./lib/rest-client');
 const { RestError } = require('./lib/rest-error');
 const { RestUnreachableError } = require('./lib/rest-unreachable-error');
+const { RSAPublicParametersModel } = require('./lib/rsa-public-parameters');
+const { SignHashRequest } = require('./lib/sign-hash-request');
+const { SignHashResponse } = require('./lib/sign-hash-response');
+const { toModel } = require('./lib/model-transform');
 
 exports.AmpliaClient = AmpliaClient;
 exports.AmpliaError = AmpliaError;
@@ -92,3 +105,16 @@ exports.Response = Response;
 exports.RestClient = RestClient;
 exports.RestError = RestError;
 exports.RestUnreachableError = RestUnreachableError;
+exports.SignHashResponse = SignHashResponse;
+exports.SignHashRequest = SignHashRequest;
+exports.RSAPublicParameters = RSAPublicParametersModel;
+exports.PinStatus = PinStatus;
+exports.PinResult = PinResult;
+exports.NameModel = NameModel;
+exports.KeyModel = KeyModel;
+exports.CsrInfo = CsrInfo;
+exports.CreateProtectedKeyRequest = CreateProtectedKeyRequest;
+exports.CreateKeyRequest = CreateKeyRequest;
+exports.DigestAlgorithms = DigestAlgorithms;
+exports.KeyTypes = KeyTypes;
+exports.toModel = toModel;
