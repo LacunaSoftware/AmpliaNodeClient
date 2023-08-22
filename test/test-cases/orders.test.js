@@ -82,13 +82,13 @@ const certificateFormats = [
 	[CertificateFormats.ARISP]
 ];
 
-describe.each(certificateFormats)('Test Cases for Amplia Node Client', () => {
+describe.each(certificateFormats)('Test Cases for Amplia Node Client', (certificateFormat) => {
 	// Test Case #1 for Amplia Node Client
 	skipWhenNotConfigured(
-		'Scenario 1: should be able to create, retrieve, and delete an order request with PKI Brazil Parameters',
+		`Scenario 1: should be able to create, retrieve, and delete an order request using certificate format ${certificateFormat}`,
 		async () => {
 			// Mount a default request using default PKIBrazilParameters
-			let request = mountOrderRequest(false);
+			let request = mountOrderRequest(false, certificateFormat);
 
 			// Mount a default request using default PKIBrazilParameters
 			const order = await ampliaClient.createOrder(request);
@@ -119,12 +119,12 @@ describe.each(certificateFormats)('Test Cases for Amplia Node Client', () => {
 
 	// Test Case #2 for Amplia Node Client
 	skipWhenNotConfigured(
-		'Scenario 2: should generate an order, retrieve, generate an order link and remove the order afterwards',
+		`Scenario 2: should generate an order, retrieve, generate an order link and remove the order afterwards certificate format ${certificateFormat}`,
 		async () => {
 			// Mount a default request using default PKIBrazilParameters
 			let request = mountOrderRequest(false);
 
-			const order = await ampliaClient.createOrder(request);
+			const order = await ampliaClient.createOrder(request, certificateFormat);
 			// get the order issue link
 			const orderLink = await ampliaClient.getOrderIssueLink(order.id);
 			// Retrieve the order
@@ -162,7 +162,8 @@ describe.each(certificateFormats)('Test Cases for Amplia Node Client', () => {
 
 	// Test Case #3 for Amplia Node Client
 	skipWhenNotConfigured(
-		'Scenario 3: should generate an order, generate a key and a CSR using PkiExpress, then issue that certificate with its corresponding CSR',
+		'Scenario 3: should generate an order, generate a key and a CSR using PkiExpress, then issue that certificate with its corresponding CSR\n'+
+        `Using certificate format ${certificateFormat}`,
 		async () => {
 			console.log(
 				'\nWARNING: This test requires PkiExpress, version greater than 1.11\n' +
@@ -172,7 +173,7 @@ describe.each(certificateFormats)('Test Cases for Amplia Node Client', () => {
 				// Mount a default request using default PKIBrazilParameters
 				let request = mountOrderRequest(true);
 
-				const order = await ampliaClient.createOrder(request);
+				const order = await ampliaClient.createOrder(request, certificateFormat);
 				// Get an instance of the Key Generator class, responsible for generate
 				// a private key and the corresponding CSR.
 				const keyGenerator = new KeyGenerator({

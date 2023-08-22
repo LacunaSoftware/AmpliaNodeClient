@@ -6,9 +6,12 @@ const {
 	CnbCertificateParameters,
 	CieCertificateParameters,
 	ArispCertificateParameters,
+	CieInstitution,
+	ArispCartorioInfo,
+	ArispEndereco,
 } = require('../lib/certificate-parameters');
 const {
-	PkiParaguayCertificateTypes,
+	PkiParaguayCertificateTypes, ArispRoles,
 } = require('../lib/enums');
 const { PkiParaguayDocumentTypes } = require('../lib/enums');
 
@@ -68,7 +71,11 @@ const cieCertificateParameters = (user) => {
 		idNumber: 'XYZ789',
 		idIssuer: 'Government',
 		idIssuerState: 'StateX',
-		institution: 'University of Example',
+		institution: new CieInstitution({
+			name: 'University of Example',
+			city: 'Exemplary city',
+			state: 'New State of Example'
+		}),
 		degree: 'Computer Science',
 		course: 'Software Engineering',
 	});
@@ -93,8 +100,26 @@ const arispCertificateParameters = (user) => {
 	return new ArispCertificateParameters({
 		nome: user.name,
 		cpf: user.cpf,
-		funcao: 'Notary',
-		cartorio: 'Example Notary Office',
+		funcao: ArispRoles.TABELIAO,
+		cartorio: new ArispCartorioInfo({
+			cns: '1234567890',
+			numero: 'CART123',
+			nome: 'Cartório ABC',
+			oficial: 'João Silva',
+			endereco: new ArispEndereco({
+				logradouro: 'Rua Principal',
+				numero: '123',
+				complemento: 'Apartamento 4A',
+				distrito: 'Centro',
+				comarca: 'Cidade Central',
+				municipio: 'Central City',
+				estado: 'DF',
+				cep: '12345-678'
+			  }),
+			telefone: '123-456-7890',
+			site: 'www.cartorioabc.com',
+			email: 'contato@cartorioabc.com'
+		  })
 	});
 };
 module.exports = {
