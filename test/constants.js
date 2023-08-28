@@ -38,7 +38,7 @@ const pkiBrazilCertificateParameters = (user) => {
 // same kind as pkiBrazil, only different format
 const cnbCertificateParameters = (user) => {
 	return new CnbCertificateParameters({
-		name: user,
+		name: user.name,
 		emailAddress: 'john@example.com',
 		cnpj: '70.647.755/0001-68',
 		companyName: 'Example Company',
@@ -58,7 +58,7 @@ const cnbCertificateParameters = (user) => {
 
 const sslCertificateParameters = () => {
 	return new SslCertificateParameters({
-		dnsNames: 'dnsStringName',
+		dnsNames: ['teste.dns.com', 'teste2.dns.com'],
 	});
 };
 const cieCertificateParameters = (user) => {
@@ -100,7 +100,7 @@ const arispCertificateParameters = (user) => {
 	return new ArispCertificateParameters({
 		nome: user.name,
 		cpf: user.cpf,
-		funcao: ArispRoles.TABELIAO,
+		funcao: ArispRoles.OFICIAL,
 		cartorio: new ArispCartorioInfo({
 			cns: '1234567890',
 			numero: 'CART123',
@@ -115,11 +115,11 @@ const arispCertificateParameters = (user) => {
 				municipio: 'Central City',
 				estado: 'DF',
 				cep: '12345-678'
-			  }),
-			telefone: '123-456-7890',
+			}),
+			telefone: '84928173650',
 			site: 'www.cartorioabc.com',
 			email: 'contato@cartorioabc.com'
-		  })
+		})
 	});
 };
 module.exports = {

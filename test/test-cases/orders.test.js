@@ -74,15 +74,15 @@ function mountOrderRequest(
 }
 
 const certificateFormats = [
-	[CertificateFormats.PKI_BRAZIL],
-	[CertificateFormats.CNB],
-	[CertificateFormats.SSL],
-	[CertificateFormats.PKI_PARAGUAY],
-	[CertificateFormats.CIE],
-	[CertificateFormats.ARISP]
+	{certificateFormat: CertificateFormats.PKI_BRAZIL},
+	{certificateFormat: CertificateFormats.CNB},
+	{certificateFormat: CertificateFormats.SSL},
+	{certificateFormat: CertificateFormats.PKI_PARAGUAY},
+	{certificateFormat: CertificateFormats.CIE},
+	{certificateFormat: CertificateFormats.ARISP}
 ];
 
-describe.each(certificateFormats)('Test Cases for Amplia Node Client', (certificateFormat) => {
+describe.each(certificateFormats)('Test Cases for Amplia Node Client', ({certificateFormat}) => {
 	// Test Case #1 for Amplia Node Client
 	skipWhenNotConfigured(
 		`Scenario 1: should be able to create, retrieve, and delete an order request using certificate format ${certificateFormat}`,
@@ -240,15 +240,14 @@ describe.each(certificateFormats)('Test Cases for Amplia Node Client', (certific
 
 				// we can, however, revoke the previously generated certificate
 				await ampliaClient.revokeCertificate(cert.id);
+				
 				// test if the date of certificate has been revoked is less than the now date
 				const certAfterRevocation = await ampliaClient.getCertificate(
 					cert.id
 				);
-
+				const dateNow = new Date().getTime();
 				const dateRevoked = new Date(certAfterRevocation.dateRevoked);
-				expect(dateRevoked.getTime()).toBeLessThanOrEqual(
-					new Date().getTime()
-				);
+				expect(dateRevoked.getTime()).toBeLessThanOrEqual(dateNow);
 			} catch (error) {
 				console.log(error);
 			}
