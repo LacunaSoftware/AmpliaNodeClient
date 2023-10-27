@@ -93,6 +93,7 @@ exports.AmpliaErrorCodes = AmpliaErrorCodes;
 exports.HttpMethods = HttpMethods;
 exports.IssueCertificateRequest = IssueCertificateRequest;
 exports.IssuePkcs12CertificateRequest = IssuePkcs12CertificateRequest;
+exports.IssuePkcs12CertificateResponse = IssuePkcs12CertificateResponse;
 exports.Order = Order;
 exports.OrderLocketError = OrderLocketError;
 exports.BaseOrder = BaseOrder;
