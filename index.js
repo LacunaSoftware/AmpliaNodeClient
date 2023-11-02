@@ -37,6 +37,8 @@ const {
 	HttpMethods,
 } = require('./lib/enums');
 const { IssueCertificateRequest } = require('./lib/issue-certificate-request');
+const { IssueSoftwareCertificateRequest } = require('./lib/issue-software-certificate-request');
+const { IssueSoftwareCertificateResponse } = require('./lib/issue-software-certificate-response');
 const { IssuePkcs12CertificateRequest } = require('./lib/issue-pkcs12-cert-request');
 const { IssuePkcs12CertificateResponse } = require('./lib/issue-pkcs12-cert-response');
 const { KeyModel } = require('./lib/key-model');
@@ -92,6 +94,8 @@ exports.PaginationOrders = PaginationOrders;
 exports.AmpliaErrorCodes = AmpliaErrorCodes;
 exports.HttpMethods = HttpMethods;
 exports.IssueCertificateRequest = IssueCertificateRequest;
+exports.IssueSoftwareCertificateRequest = IssueSoftwareCertificateRequest;
+exports.IssueSoftwareCertificateResponse = IssueSoftwareCertificateResponse;
 exports.IssuePkcs12CertificateRequest = IssuePkcs12CertificateRequest;
 exports.IssuePkcs12CertificateResponse = IssuePkcs12CertificateResponse;
 exports.Order = Order;
