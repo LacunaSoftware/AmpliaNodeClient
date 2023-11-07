@@ -49,7 +49,8 @@ const getCertificateParams = (certificateFormat, user) => {
 
 function mountOrderRequest(
 	hasPresetUser = false,
-	certificateFormat = CertificateFormats.PKI_BRAZIL
+	certificateFormat = CertificateFormats.PKI_BRAZIL,
+	caId = null
 ) {
 
 	const user = hasPresetUser
@@ -64,7 +65,7 @@ function mountOrderRequest(
 
 	// Create an order request.
 	const request = new CreateOrderRequest({
-		caId: Config.AMPLIA_CA_ID,
+		caId: caId != null ? caId : Config.AMPLIA_CA_ID   ,
 		validityEnd: generators.generateDateTwoYearsFromNow(),
 		kind: CertificateKinds.PUBLIC_KEY,
 		parameters: getCertificateParams(certificateFormat, user),
@@ -256,3 +257,15 @@ describe.each(certificateFormats)('Test Cases for Amplia Node Client', ({certifi
 	);
 	// end Test Case #3 for Amplia Node Client
 });
+describe("Software Certificate Case", function(){
+	
+	test("Issue", async function(){
+		// This test require api/certificates/software endpoint to work properly
+
+		var request = mountOrderRequest(true,CertificateFormats.PKI_BRAZIL);
+		const order = await ampliaClient.createOrder(request);
+		var result = await ampliaClient.issueSoftwareCertificate(order.id,"1234", 2048);
+		expect(result).not.toBeNull();
+	})
+	
+})
