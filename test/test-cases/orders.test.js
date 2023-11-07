@@ -259,7 +259,7 @@ describe.each(certificateFormats)('Test Cases for Amplia Node Client', ({certifi
 });
 describe('issueSoftwareCertificate', function(){
 	
-	test.skip('Should return software certificate', async function(){
+	test('Should return software certificate', async function(){
 		// This test require api/certificates/software endpoint to work properly
 		var request = mountOrderRequest(true,CertificateFormats.PKI_BRAZIL);
 		const order = await ampliaClient.createOrder(request);
