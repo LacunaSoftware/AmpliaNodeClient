@@ -257,14 +257,14 @@ describe.each(certificateFormats)('Test Cases for Amplia Node Client', ({certifi
 	);
 	// end Test Case #3 for Amplia Node Client
 });
-describe("issueSoftwareCertificate", function(){
+describe('issueSoftwareCertificate', function(){
 	
-	test.skip("Should return software certificate", async function(){
+	test.skip('Should return software certificate', async function(){
 		// This test require api/certificates/software endpoint to work properly
 		var request = mountOrderRequest(true,CertificateFormats.PKI_BRAZIL);
 		const order = await ampliaClient.createOrder(request);
-		var result = await ampliaClient.issueSoftwareCertificate(order.id,"1234", 2048);
+		var result = await ampliaClient.issueSoftwareCertificate(order.id,'1234', 2048);
 		expect(result).not.toBeNull();
-	})
+	});
 	
-})
+});
